@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Site Web</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Positionne le menu burger en haut à droite */
+        .custom-menu {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1050;
+        }
+        .custom-menu .dropdown-menu {
+            right: 0;
+            left: auto;
+            min-width: 180px;
+            background-color: #fff;
+            border: 1px solid #dee2e6;
+            box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15);
+        }
+        .custom-menu .dropdown-item {
+            color: #212529;
+            font-weight: 500;
+        }
+        .custom-menu .dropdown-item:hover, 
+        .custom-menu .dropdown-item:focus {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Logo pleine largeur -->
+    <div class="w-100 mb-4" style="background: #f8f9fa;">
+        <img src="https://via.placeholder.com/1200x180?text=Votre+Logo" alt="Logo" class="img-fluid d-block mx-auto" style="max-width:100%; height:auto;">
+    </div>
+    <nav class="custom-menu">
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" id="menuDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="navbar-toggler-icon"></span>
+            </button> 
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="menuDropdown">
+                <a class="dropdown-item" href="#a-propos">À propos de nous</a>
+                <a class="dropdown-item" href="#nos-services">Nos services</a>
+                <a class="dropdown-item" href="#contactez-nous">Contactez-nous</a>
+                <a class="dropdown-item" href="#portfolio">Portfolio</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <section id="a-propos" class="mb-5">
+            <h2>À propos de nous</h2>
+            <p>Nous sommes une équipe passionnée dédiée à fournir des solutions innovantes et personnalisées pour nos clients. Notre expertise couvre divers domaines du numérique et de la technologie.</p>
+        </section>
+
+        <section id="nos-services" class="mb-5">
+            <h2>Nos services</h2>
+            <ul>
+                <li>Développement web sur mesure</li>
+                <li>Design graphique et identité visuelle</li>
+                <li>Conseil en transformation digitale</li>
+                <li>Maintenance et support technique</li>
+            </ul>
+        </section>
+
+        <section id="contactez-nous" class="mb-5">
+            <h2>Contactez-nous</h2>
+            <form>
+                <div class="form-group">
+                    <label for="nom">Nom</label>
+                    <input type="text" class="form-control" id="nom" placeholder="Votre nom">
+                </div>
+                <div class="form-group">
+                    <label for="email">Adresse e-mail</label>
+                    <input type="email" class="form-control" id="email" placeholder="Votre e-mail">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" id="message" rows="3" placeholder="Votre message"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Envoyer</button>
+            </form>
+        </section>
+
+        <section id="portfolio" class="mb-5">
+            <h2>Portfolio</h2>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/350x150" class="card-img-top" alt="Projet 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Projet 1</h5>
+                            <p class="card-text">Description courte du projet 1.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/350x150" class="card-img-top" alt="Projet 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Projet 2</h5>
+                            <p class="card-text">Description courte du projet 2.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/350x150" class="card-img-top" alt="Projet 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Projet 3</h5>
+                            <p class="card-text">Description courte du projet 3.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Force l'ouverture/fermeture du menu au clic (pour éviter les soucis d'affichage)
+        document.getElementById('menuDropdown').addEventListener('click', function (e) {
+            e.stopPropagation();
+            this.nextElementSibling.classList.toggle('show');
+        });
+        // Ferme le menu si on clique ailleurs
+        document.addEventListener('click', function () {
+            document.querySelectorAll('.custom-menu .dropdown-menu').forEach(function(menu){
+                menu.classList.remove('show');
+            });
+        });
+    </script>
+</body>
+</html>
